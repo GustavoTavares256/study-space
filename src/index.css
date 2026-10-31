@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    @apply bg-cream text-ink font-sans antialiased;
+    background-image:
+      radial-gradient(1200px 800px at 85% -10%, rgba(244, 221, 229, 0.55), transparent 60%),
+      radial-gradient(900px 700px at -10% 30%, rgba(244, 221, 229, 0.35), transparent 55%),
+      radial-gradient(1000px 900px at 50% 115%, rgba(168, 185, 156, 0.18), transparent 60%);
+    background-attachment: fixed;
+    min-height: 100vh;
+  }
+
+  ::selection {
+    background: #f4dde5;
+    color: #66545b;
+  }
+}
+
+@layer components {
+  .h-study-display {
+    @apply font-display text-ink;
+  }
+
+  .h-study-card {
+    @apply bg-white rounded-3xl shadow-soft border border-rose/20;
+  }
+
+  .h-study-input {
+    @apply w-full rounded-2xl border border-rose/30 bg-white px-4 py-3 text-ink placeholder:text-muted outline-none transition-all duration-300 focus:border-rose focus:ring-4 focus:ring-rose/20;
+  }
+
+  .h-study-btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-2xl bg-petal px-5 py-3 font-semibold text-white shadow-rose transition-all duration-300 hover:bg-petal/85 hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 disabled:opacity-50 disabled:pointer-events-none;
+  }
+
+  .h-study-btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-2xl border border-rose/40 bg-white/70 px-5 py-3 font-semibold text-petal transition-all duration-300 hover:bg-sakura;
+  }
+
+  .h-study-label {
+    @apply mb-1.5 block text-sm font-semibold text-ink;
+  }
+
+  .h-study-chip {
+    @apply inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-semibold;
+  }
+
+  .h-scroll::-webkit-scrollbar {
+    height: 8px;
+    width: 8px;
+  }
+
+  .h-scroll::-webkit-scrollbar-thumb {
+    background: #e9cbd6;
+    border-radius: 9999px;
+  }
+
+  .h-scroll::-webkit-scrollbar-track {
+    background: transparent;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
