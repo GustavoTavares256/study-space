@@ -14,6 +14,7 @@ import ReminderCard from "../../components/dashboard/ReminderCard";
 import AchievementsCard from "../../components/dashboard/AchievementsCard";
 import PomodoroTimer from "../../components/pomodoro/PomodoroTimer";
 import StatCard from "../../components/common/StatCard";
+import LogoSakura from "../../components/common/LogoSakura";
 
 export default function Dashboard() {
   const { user } = useAuth();
@@ -73,6 +74,13 @@ export default function Dashboard() {
 
   return (
     <div className="mx-auto w-full max-w-6xl px-4 pb-12 pt-0 md:pt-8">
+      <div className="flex flex-col items-center gap-3 mb-8 md:mb-10">
+        <LogoSakura size={44} className="md:size-56 md:mb-2" />
+        <span className="h-study-display text-xl font-semibold text-ink md:text-2xl tracking-tight">
+          Seu jardim particular de estudos 🌸
+        </span>
+        <div className="h-[1px] w-24 md:w-32 bg-rose/30 rounded-full mx-4" />
+      </div>
       <GreetingHeader user={user} tasks={tasks} exams={exams} />
 
       <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
@@ -82,7 +90,7 @@ export default function Dashboard() {
         <StatCard icon={Clock} label="Horas estudadas" value={hoursThisWeek.toFixed(1)} tone="neutral" hint="Nesta semana" />
       </div>
 
-      <div className="mt-6 grid gap-6 lg:grid-cols-3">
+      <div className="mt-6 grid grid-cols-1 gap-6 lg:grid-cols-3">
         <div className="lg:col-span-2">
           <WeeklyChart data={weeklyData} />
         </div>
@@ -91,7 +99,7 @@ export default function Dashboard() {
         </div>
       </div>
 
-      <div className="mt-6 grid gap-6 lg:grid-cols-3">
+      <div className="mt-6 grid grid-cols-1 gap-6 lg:grid-cols-3">
         <div className="lg:col-span-2">
           <TodaySchedule schedule={schedule} subjects={subjects} todayIndex={todayIndex} />
         </div>
@@ -100,7 +108,7 @@ export default function Dashboard() {
         </div>
       </div>
 
-      <div className="mt-6 grid gap-6 lg:grid-cols-3">
+      <div className="mt-6 grid grid-cols-1 gap-6 lg:grid-cols-3">
         <div className="lg:col-span-2">
           <UpcomingExams exams={exams} subjects={subjects} />
         </div>
